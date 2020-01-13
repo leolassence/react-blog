@@ -7,6 +7,7 @@ import {
 
 import PostList from './containers/PostList';
 import PostForm from './containers/PostForm';
+import Post from './containers/Post';
 import NotFound from './components/NotFound';
 
 class Routes extends React.Component {
@@ -16,7 +17,8 @@ class Routes extends React.Component {
         <Switch>
           <Route exact path='/' component={PostList} />
           <Route path='/create-post' component={PostForm} />
-          <Route component={NotFound} />
+          <Route path='/post/:id' component={Post} />
+          <Route path='*' component={NotFound} />
         </Switch>
       </Router>
     );
