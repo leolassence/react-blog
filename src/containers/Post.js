@@ -1,16 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
+import { readPost } from '../actions/';
 import PostContent from '../components/PostContent';
 
 class Post extends React.Component {
+  componentDidMount() {
+    if (this.props.match.params.id) {
+      this.props.readPost(this.props.match.params.id);
+    }
+  }
+
+  renderPostContent() {
+    const { post } = this.props;
+
+    if (post) {
+      return <PostContent post={post} />
+    }
+  }
+
   render() {
     return (
       <div>
-        <h1>PostId: {this.props.match.params.id}</h1>
-        <PostContent />
+        {this.renderPostContent()}
       </div>
-    );
+    )
   }
 }
 
@@ -22,4 +38,14 @@ Post.propTypes = {
   })
 };
 
-export default Post;
+const mapStateToProps = state => {
+  return {
+    post: state.activePost
+  }
+}
+
+const mapDispatchToProps = dispatch => ({
+  ...bindActionCreators({ readPost }, dispatch)
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Post);

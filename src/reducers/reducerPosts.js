@@ -5,20 +5,10 @@ export default function reducerPosts(state = [], action) {
     case AT_POSTS.READ_ALL: {
       return action.payload;
     }
-    case AT_POSTS.READ: {
-      return {
-        ...state
-      }
-    }
-    case AT_POSTS.READ_DELETE: {
-      return {
-        ...state
-      }
-    }
-    case AT_POSTS.READ_CREATE: {
-      return {
-        ...state
-      }
+    case AT_POSTS.DELETE: {
+      return state.filter(post => {
+        return post.id === action.payload ? false : true;
+      });
     }
     default: {
       return state;

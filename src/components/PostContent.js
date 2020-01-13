@@ -1,16 +1,13 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 
-class PostContent extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>Content</h1>
-      </div>
-    );
-  }
+const PostContent = ({ post }) => {
+  return (
+    <div>
+      <h2>{post.title}</h2>
+      <p>{post.content}</p>
+      <p>Author: {post.author}</p>
+    </div>
+  );
 }
-
-// PostContent.propTypes = {};
 
 export default PostContent;

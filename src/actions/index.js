@@ -27,7 +27,7 @@ function readPost(id) {
 
 function deletePost(id) {
   return async function(dispatch) {
-    const res = await axios.delete(`${ENDPOINT}/posts/${id}`);
+    await axios.delete(`${ENDPOINT}/posts/${id}`);
 
     dispatch({
       type: AT_POSTS.DELETE,
