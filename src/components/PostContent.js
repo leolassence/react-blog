@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class App extends React.Component {
+class PostContent extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello</h1>
+        <h1>Content</h1>
       </div>
     );
   }
 }
 
-App.propTypes = {};
+PostContent.propTypes = {};
 
-export default App;
+export default PostContent;
