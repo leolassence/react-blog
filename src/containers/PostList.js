@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { Link } from 'react-router-dom';
 
 import {
   readAllPost,
@@ -34,6 +35,11 @@ class PostList extends React.Component {
       return (
         <div>
           <h1>Post List</h1>
+          <div className='button-add'>
+            <Link to={'/create-post'}>
+              <button className='btn btn-primary btn-circle btn-lg'>+</button>
+            </Link>
+          </div>
           <table className='table table-hover'>
             <thead>
               <tr>
