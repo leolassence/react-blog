@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 class PostContent extends React.Component {
   render() {
@@ -11,6 +11,6 @@ class PostContent extends React.Component {
   }
 }
 
-PostContent.propTypes = {};
+// PostContent.propTypes = {};
 
 export default PostContent;

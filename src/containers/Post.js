@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
-import { PostContent } from '../components/PostContent';
+import PostContent from '../components/PostContent';
 
 class Post extends React.Component {
   render() {
@@ -13,6 +13,6 @@ class Post extends React.Component {
   }
 }
 
-Post.propTypes = {};
+// Post.propTypes = {};
 
 export default Post;
