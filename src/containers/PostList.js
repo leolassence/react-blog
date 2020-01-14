@@ -19,11 +19,11 @@ class PostList extends React.Component {
     const { posts } = this.props;
 
     if (posts) {
-      return posts.map(post => <PostListItem
+      return posts.map(post => (<PostListItem
         key={post.id}
         post={post}
         deletePostCallBack={(post) => this.deletePostCallBack(post)}
-        />);
+        />));
       }
     }
 

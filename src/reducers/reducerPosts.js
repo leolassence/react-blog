@@ -10,6 +10,9 @@ export default function reducerPosts(state = [], action) {
         return post.id === action.payload ? false : true;
       });
     }
+    case AT_POSTS.CREATE: {
+      return [...state, action.payload]
+    }
     default: {
       return state;
     }
